@@ -50,6 +50,11 @@ kotlin {
 
             implementation(libs.mvvm.core)
             implementation(libs.image.loader)
+
+            implementation(libs.coil.compose.core)
+            implementation(libs.coil.mp)
+            implementation(libs.coil.network.ktor)
+            implementation(libs.coil.compose)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
