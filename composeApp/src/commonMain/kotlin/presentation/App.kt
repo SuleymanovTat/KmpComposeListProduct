@@ -1,3 +1,5 @@
+package presentation
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -13,6 +15,8 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import kotlinprojectcompose.composeapp.generated.resources.Res
 import kotlinprojectcompose.composeapp.generated.resources.compose_multiplatform
+import org.jetbrains.skia.Data
+import kotlin.random.Random
 
 @Composable
 @Preview
@@ -25,9 +29,12 @@ fun App() {
             }
             AnimatedVisibility(showContent) {
                 val greeting = remember { Greeting().greet() }
-                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+                Column(
+                    Modifier.fillMaxWidth(),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
                     Image(painterResource(Res.drawable.compose_multiplatform), null)
-                    Text("Compose: $greeting")
+                    Text("Compose: $greeting" + "\n === " + Random(100).nextInt().toString())
                 }
             }
         }

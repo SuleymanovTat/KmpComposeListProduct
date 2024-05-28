@@ -1,5 +1,5 @@
 interface Platform {
-    val name: String
+    fun name(): String
 }
 
 expect fun getPlatform(): Platform
