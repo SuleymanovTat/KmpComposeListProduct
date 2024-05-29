@@ -3,8 +3,6 @@ package presentation
 import data.models.Product
 import data.repository.ProductRepository
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
@@ -18,7 +16,7 @@ class ProductsViewModel : ViewModel() {
     private val repository = ProductRepository()
 
     init {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch() {
             repository.getProducts()
                 .catch {
                     println("Error  ${it.message}")

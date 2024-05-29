@@ -19,6 +19,20 @@ kotlin {
     }
 
     jvm("desktop")
+//    web
+    js(IR) {
+        moduleName = "KotlinProjectCompose"
+        browser() {
+
+            //Tool bundler for converting kotlin code to js code
+            commonWebpackConfig() {
+                outputFileName = "KotlinProjectCompose.js"
+                devServer = (devServer
+                    ?: org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig.DevServer()).copy()
+            }
+            binaries.executable() //it will generate executable js files
+        }
+    }
 
     listOf(
         iosX64(),
@@ -117,4 +131,9 @@ compose.desktop {
             packageVersion = "1.0.0"
         }
     }
+}
+
+//web
+compose.experimental {
+    web.application {}
 }
