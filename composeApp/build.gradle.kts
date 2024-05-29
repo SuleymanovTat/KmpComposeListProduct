@@ -69,6 +69,9 @@ kotlin {
             implementation(libs.coil.mp)
             implementation(libs.coil.network.ktor)
             implementation(libs.coil.compose)
+
+            implementation(libs.kotlinx.datetime)
+            implementation(libs.voyager.navigator)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

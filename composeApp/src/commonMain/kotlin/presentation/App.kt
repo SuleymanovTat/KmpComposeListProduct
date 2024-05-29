@@ -18,6 +18,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.SearchBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -28,8 +29,10 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.material3.SearchBar
 import coil3.compose.AsyncImage
+import kotlinx.datetime.Clock
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 
@@ -47,6 +50,11 @@ fun App() {
             Modifier.fillMaxSize()
         ) {
             LazyColumn(contentPadding = PaddingValues(16.dp)) {
+                item {
+                    val currentDate =
+                        Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
+                    Text("${currentDate}")
+                }
                 item {
                     Column {
                         SearchBar(
