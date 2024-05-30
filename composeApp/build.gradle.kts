@@ -72,6 +72,9 @@ kotlin {
 
             implementation(libs.kotlinx.datetime)
             implementation(libs.voyager.navigator)
+            implementation(libs.voyager.navigator.koin)
+            implementation(libs.voyager.navigator.screenmodel)
+            implementation(libs.voyager.navigator.lifecycle.kmp)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
