@@ -75,6 +75,10 @@ kotlin {
             implementation(libs.voyager.navigator.koin)
             implementation(libs.voyager.navigator.screenmodel)
             implementation(libs.voyager.navigator.lifecycle.kmp)
+
+            implementation(libs.koin.core)
+//            implementation("io.insert-koin:koin-compose:1.2.0-Beta4")
+
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
@@ -83,6 +87,8 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.ktor.client.okhttp)
+            implementation(libs.koin.core)
+            implementation(libs.koin.android)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)

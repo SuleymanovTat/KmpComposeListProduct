@@ -39,10 +39,10 @@ import presentation.ProductsViewModel
 
 @Composable
 fun ListProductsWidget(
-    homeViewModel: ProductsViewModel,
+    productsViewModel: ProductsViewModel,
     onClickItem: (Product) -> Unit,
 ) {
-    val state = homeViewModel.products.collectAsState()
+    val state = productsViewModel.products.collectAsState()
     val products = state.value
     print("products $products")
     Box(

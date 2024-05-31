@@ -1,8 +1,8 @@
 package presentation.listProducts
 
 import androidx.compose.runtime.Composable
-import cafe.adriel.voyager.core.model.rememberScreenModel
 import cafe.adriel.voyager.core.screen.Screen
+import cafe.adriel.voyager.koin.koinScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import presentation.ProductsViewModel
@@ -13,9 +13,9 @@ class ListProductsScreen : Screen {
     @Composable
     override fun Content() {
         println("ListProductsScreen")
-        val homeViewModel = rememberScreenModel { ProductsViewModel() }
+        val productsViewModel = koinScreenModel<ProductsViewModel>()
         val navigator = LocalNavigator.currentOrThrow
-        ListProductsWidget(homeViewModel, onClickItem = {
+        ListProductsWidget(productsViewModel, onClickItem = {
             navigator.push(DetailsProductScreen(it))
         })
     }

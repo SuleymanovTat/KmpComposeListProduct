@@ -11,11 +11,10 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-class ProductsViewModel : ScreenModel {
+class ProductsViewModel(val repository: ProductRepository) : ScreenModel {
 
     private val _products = MutableStateFlow<List<Product>>(emptyList())
     val products = _products.asStateFlow()
-    private val repository = ProductRepository()
 
     init {
         if (_products.value.isEmpty()) {
