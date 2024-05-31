@@ -77,7 +77,7 @@ kotlin {
             implementation(libs.voyager.navigator.lifecycle.kmp)
 
             implementation(libs.koin.core)
-//            implementation("io.insert-koin:koin-compose:1.2.0-Beta4")
+            implementation(libs.koin.compose)
 
         }
         desktopMain.dependencies {
