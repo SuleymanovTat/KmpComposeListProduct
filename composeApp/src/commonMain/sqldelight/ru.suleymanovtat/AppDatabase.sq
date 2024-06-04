@@ -1,0 +1,18 @@
+CREATE TABLE Product (
+    id INTEGER PRIMARY KEY NOT NULL,
+    title TEXT,
+    description TEXT,
+    category TEXT,
+    image TEXT,
+    price REAL NOT NULL
+);
+
+insertProduct:
+INSERT INTO Product(id,title,description,category, image,price)
+VALUES (?,?,?,?,?,? );
+
+removeAllProducts:
+DELETE FROM Product;
+
+selectAllProducts:
+SELECT Product.* FROM Product;

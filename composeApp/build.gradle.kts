@@ -8,6 +8,7 @@ plugins {
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
     kotlin("plugin.serialization") version "2.0.0-RC3"
+    id("app.cash.sqldelight") version "2.0.2"
 }
 
 kotlin {
@@ -63,7 +64,7 @@ kotlin {
             implementation(libs.ktor.serialization.kotlinx.json)
 
             implementation(libs.mvvm.core)
-            implementation(libs.image.loader)
+//            implementation(libs.image.loader)
 
             implementation(libs.coil.compose.core)
             implementation(libs.coil.mp)
@@ -82,6 +83,7 @@ kotlin {
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
+            implementation("app.cash.sqldelight:sqlite-driver:2.0.2")
         }
         androidMain.dependencies {
             implementation(compose.preview)
@@ -89,9 +91,21 @@ kotlin {
             implementation(libs.ktor.client.okhttp)
             implementation(libs.koin.core)
             implementation(libs.koin.android)
+
+            implementation("app.cash.sqldelight:android-driver:2.0.2")
+
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
+            implementation("app.cash.sqldelight:native-driver:2.0.2")
+
+        }
+        jsMain.dependencies {
+            implementation(npm("@cashapp/sqldelight-sqljs-worker", "2.0.2"))
+            implementation(npm("sql.js", "1.8.0"))
+
+            implementation("app.cash.sqldelight:web-worker-driver:2.0.2")
+            implementation(devNpm("copy-webpack-plugin", "9.1.0"))
         }
     }
 }
@@ -148,4 +162,13 @@ compose.desktop {
 //web
 compose.experimental {
     web.application {}
+}
+
+sqldelight {
+    databases {
+        create("AppDatabase") {
+            packageName.set("ru.suleymanovtat")
+            generateAsync.set(true)
+        }
+    }
 }

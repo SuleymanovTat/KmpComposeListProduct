@@ -1,15 +1,23 @@
 package di
 
+import data.datasource.ProductsLocalDataSource
+import data.datasource.ProductsRemoteDataSource
 import data.repository.ProductRepository
 import org.koin.dsl.module
 import presentation.ProductsViewModel
 
-fun commonModule() = networkModule() + module {
+fun commonModule() = cacheModule() + networkModule() + module {
 
-    single {
-        ProductRepository(get())
-    }
-    single {
-        ProductsViewModel(get())
-    }
+//    single {
+//        ProductsRemoteDataSource(get())
+//    }
+//    single {
+//        ProductsLocalDataSource(get())
+//    }
+//    single {
+//        ProductRepository(get(), get())
+//    }
+//    single {
+//        ProductsViewModel(get())
+//    }
 }

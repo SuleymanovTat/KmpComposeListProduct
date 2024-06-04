@@ -12,11 +12,13 @@ androidx-material = "1.12.0"
 androidx-test-junit = "1.1.5"
 
 compose-plugin = "1.6.10"
+#compose-plugin = "1.6.20-dev1667"
 #compose-plugin = "1.6.20-dev1646"
 imageLoader = "1.7.8"
 junit = "4.13.2"
 koinAndroid = "3.5.6"
 koinCompose = "3.6.0-wasm-alpha2"
+#koinCore = "3.6.0-Beta4 - Compose 1.2.0-Beta4"
 koinCore = "3.5.6"
 kotlin = "2.0.0"
 kotlinxCoroutinesCore = "1.8.1"
@@ -38,7 +40,7 @@ coil-mp = { module = "io.coil-kt.coil3:coil", version.ref = "coil3" }
 
 #coil-core = { module = "io.coil-kt.coil3:coil-core", version.ref = "coilCore" }
 #coil-network = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "coilCore" }
-image-loader = { module = "io.github.qdsfdhvh:image-loader", version.ref = "imageLoader" }
+#image-loader = { module = "io.github.qdsfdhvh:image-loader", version.ref = "imageLoader" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
 koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koinCompose" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koinCore" }

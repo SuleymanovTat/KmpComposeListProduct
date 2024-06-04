@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Product(
 
-    @SerialName("id") var id: Int? = null,
+    @SerialName("id") var id: Long? = null,
     @SerialName("title") var title: String? = null,
     @SerialName("price") var price: Double? = null,
     @SerialName("description") var description: String? = null,

@@ -12,11 +12,11 @@ class ListProductsScreen : Screen {
 
     @Composable
     override fun Content() {
-        println("ListProductsScreen")
-        val productsViewModel = koinScreenModel<ProductsViewModel>()
-        val navigator = LocalNavigator.currentOrThrow
-        ListProductsWidget(productsViewModel, onClickItem = {
-            navigator.push(DetailsProductScreen(it))
-        })
+//        println("ListProductsScreen")
+//        val productsViewModel = koinScreenModel<ProductsViewModel>()
+//        val navigator = LocalNavigator.currentOrThrow
+//        ListProductsWidget(productsViewModel, onClickItem = {
+//            navigator.push(DetailsProductScreen(it))
+//        })
     }
 }
