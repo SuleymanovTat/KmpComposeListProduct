@@ -4,6 +4,7 @@ import cafe.adriel.voyager.core.model.ScreenModel
 import cafe.adriel.voyager.core.model.screenModelScope
 import data.models.Product
 import data.repository.ProductRepository
+import io.github.aakira.napier.Napier
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -17,8 +18,10 @@ class ProductsViewModel(val repository: ProductRepository) : ScreenModel {
     val products = _products.asStateFlow()
 
     init {
+        Napier.e("my init")
+        println("ProductsViewModel init")
         if (_products.value.isEmpty()) {
-            println("ProductsViewModel ${_products.value.size}")
+            println("ProductsViewModel launch ${_products.value.size}")
             screenModelScope.launch(Dispatchers.Default) {
 //            screenModelScope.launch() {
                 repository.getProducts()

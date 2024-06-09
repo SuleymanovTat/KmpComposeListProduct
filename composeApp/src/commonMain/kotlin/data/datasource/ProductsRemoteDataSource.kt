@@ -11,6 +11,8 @@ class ProductsRemoteDataSource(
 
     suspend fun getAllProducts(): List<Product> {
         val response = httpClient.get("https://fakestoreapi.com/products")
+
+        println("response ${response.status}")
         return response.body()
     }
 

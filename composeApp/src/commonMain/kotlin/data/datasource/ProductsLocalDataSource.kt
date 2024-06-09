@@ -8,7 +8,7 @@ class ProductsLocalDataSource(
 ) {
 
     suspend fun getAllProducts(): List<Product> {
-        println("database_getAllProducts")
+        println("database getAllProducts")
         return database.getAllProducts()
     }
 

@@ -51,6 +51,17 @@ fun ListProductsWidget(
         LazyColumn(contentPadding = PaddingValues(16.dp)) {
             TimeTextItem()
             SearchBarItem()
+            item { Text("start os false products ${products.size}") }
+            item {
+                AsyncImage(
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .size(50.dp),
+                    model = "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+//                model = product.image,
+                    contentDescription = null
+                )
+            }
             ItemProduct(products, onClickItem)
         }
     }

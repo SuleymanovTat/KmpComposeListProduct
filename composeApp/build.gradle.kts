@@ -78,7 +78,9 @@ kotlin {
             implementation(libs.voyager.navigator.lifecycle.kmp)
 
             implementation(libs.koin.core)
-//            implementation(libs.koin.compose)
+            implementation(libs.koin.compose)
+
+            implementation("io.github.aakira:napier:2.7.1")
 
         }
         desktopMain.dependencies {
@@ -104,10 +106,18 @@ kotlin {
 
         }
         jsMain.dependencies {
-            implementation(npm("@cashapp/sqldelight-sqljs-worker", "2.0.2"))
-            implementation(npm("sql.js", "1.8.0"))
+//            implementation(npm("@cashapp/sqldelight-sqljs-worker", "2.0.2"))
+//            implementation(npm("sql.js", "1.8.0"))
+//
+////            implementation("app.cash.sqldelight:web-worker-driver:2.0.2")
+////            implementation(devNpm("copy-webpack-plugin", "9.1.0"))
+//            implementation( "app.cash.sqldelight:sqljs-driver:2.0.0-rc02")
+//                    implementation( npm("sql.js", "1.6.2")
+//                    implementation devNpm("copy-webpack-plugin", "9.1.0")
 
-            implementation("app.cash.sqldelight:web-worker-driver:2.0.2")
+            implementation(npm("@cashapp/sqldelight-sqljs-worker", "2.0.1"))
+            implementation(npm("sql.js", "1.8.0"))
+            implementation("app.cash.sqldelight:web-worker-driver:2.0.1")
             implementation(devNpm("copy-webpack-plugin", "9.1.0"))
         }
     }

@@ -15,7 +15,10 @@ class ProductRepository(
 ) {
 
     private suspend fun getAllProducts(forceReload: Boolean = false): List<Product> {
+        println("start")
         val cachedItems = productsLocalDataSource.getAllProducts()
+        println("end")
+        println("cachedItems ${cachedItems.size}")
         return if (cachedItems.isNotEmpty() && !forceReload) {
             cachedItems
         } else {
@@ -27,6 +30,7 @@ class ProductRepository(
     }
 
     fun getProducts(forceReload: Boolean = false) = flow {
+        println("ProductRepository getProducts")
         emit(getAllProducts(forceReload))
     }
 }
