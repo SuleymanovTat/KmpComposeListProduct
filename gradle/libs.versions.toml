@@ -21,13 +21,15 @@ koinCompose = "3.6.0-wasm-alpha2"
 #koinCore = "3.6.0-Beta4 - Compose 1.2.0-Beta4"
 koinCore = "3.5.6"
 kotlin = "2.0.0"
-kotlinxCoroutinesCore = "1.8.1"
+kotlinxCoroutinesCore = "1.9.0-RC"
 kotlinxDatetime = "0.6.0"
 kotlinxSerializationJson = "1.7.0-RC"
 ktor = "2.3.11"
 mvvmCore = "0.16.1"
 coil3 = "3.0.0-alpha06"
 voyagerNavigator = "1.1.0-beta01"
+#imageLoader = "1.7.8"
+
 
 [libraries]
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3" }
@@ -37,6 +39,8 @@ coil-mp = { module = "io.coil-kt.coil3:coil", version.ref = "coil3" }
 
 #coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 #coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+image-loader = { module = "io.github.qdsfdhvh:image-loader", version.ref = "imageLoader" }
+
 
 #coil-core = { module = "io.coil-kt.coil3:coil-core", version.ref = "coilCore" }
 #coil-network = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "coilCore" }
@@ -54,7 +58,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 androidx-material = { group = "com.google.android.material", name = "material", version.ref = "androidx-material" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
-#kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesCore" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesCore" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }

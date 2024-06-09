@@ -19,8 +19,8 @@ class ProductsViewModel(val repository: ProductRepository) : ScreenModel {
     init {
         if (_products.value.isEmpty()) {
             println("ProductsViewModel ${_products.value.size}")
-//            screenModelScope.launch(Dispatchers.Default) {
-            screenModelScope.launch() {
+            screenModelScope.launch(Dispatchers.Default) {
+//            screenModelScope.launch() {
                 repository.getProducts()
                     .catch {
                         println("Error  ${it.message}")

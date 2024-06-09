@@ -64,7 +64,7 @@ kotlin {
             implementation(libs.ktor.serialization.kotlinx.json)
 
             implementation(libs.mvvm.core)
-//            implementation(libs.image.loader)
+            implementation(libs.image.loader)
 
             implementation(libs.coil.compose.core)
             implementation(libs.coil.mp)
@@ -85,6 +85,8 @@ kotlin {
             implementation(compose.desktop.currentOs)
             implementation("app.cash.sqldelight:sqlite-driver:2.0.2")
 //            implementation("io.ktor:ktor-client-cio-jvm:1.4.0")
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.okhttp)
         }
         androidMain.dependencies {
             implementation(compose.preview)

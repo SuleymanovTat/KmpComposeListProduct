@@ -61,6 +61,7 @@ private fun LazyListScope.ItemProduct(products: List<Product>, onClickItem: (Pro
         products[it].id.toString()
     }) {
         val product = products[it]
+        println("image ${product.image}")
         Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.clickable {
             onClickItem(products[it])
         }) {
@@ -68,6 +69,7 @@ private fun LazyListScope.ItemProduct(products: List<Product>, onClickItem: (Pro
                 modifier = Modifier
                     .padding(16.dp)
                     .size(50.dp),
+//                model = "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
                 model = product.image,
                 contentDescription = null
             )

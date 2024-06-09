@@ -14,7 +14,6 @@ class ListProductsScreen : Screen {
     @Composable
     override fun Content() {
         println("ListProductsScreen start")
-        Text("123")
         val productsViewModel = koinScreenModel<ProductsViewModel>()
         val navigator = LocalNavigator.currentOrThrow
         ListProductsWidget(productsViewModel, onClickItem = {
