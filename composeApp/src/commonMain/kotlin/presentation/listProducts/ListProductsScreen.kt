@@ -1,5 +1,6 @@
 package presentation.listProducts
 
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.koinScreenModel
@@ -12,11 +13,12 @@ class ListProductsScreen : Screen {
 
     @Composable
     override fun Content() {
-//        println("ListProductsScreen")
-//        val productsViewModel = koinScreenModel<ProductsViewModel>()
-//        val navigator = LocalNavigator.currentOrThrow
-//        ListProductsWidget(productsViewModel, onClickItem = {
-//            navigator.push(DetailsProductScreen(it))
-//        })
+        println("ListProductsScreen start")
+        Text("123")
+        val productsViewModel = koinScreenModel<ProductsViewModel>()
+        val navigator = LocalNavigator.currentOrThrow
+        ListProductsWidget(productsViewModel, onClickItem = {
+            navigator.push(DetailsProductScreen(it))
+        })
     }
 }

@@ -78,12 +78,13 @@ kotlin {
             implementation(libs.voyager.navigator.lifecycle.kmp)
 
             implementation(libs.koin.core)
-            implementation(libs.koin.compose)
+//            implementation(libs.koin.compose)
 
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation("app.cash.sqldelight:sqlite-driver:2.0.2")
+//            implementation("io.ktor:ktor-client-cio-jvm:1.4.0")
         }
         androidMain.dependencies {
             implementation(compose.preview)

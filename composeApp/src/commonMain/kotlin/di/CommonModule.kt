@@ -8,16 +8,16 @@ import presentation.ProductsViewModel
 
 fun commonModule() = cacheModule() + networkModule() + module {
 
-//    single {
-//        ProductsRemoteDataSource(get())
-//    }
-//    single {
-//        ProductsLocalDataSource(get())
-//    }
-//    single {
-//        ProductRepository(get(), get())
-//    }
-//    single {
-//        ProductsViewModel(get())
-//    }
+    single {
+        ProductsRemoteDataSource(get())
+    }
+    single {
+        ProductsLocalDataSource(get())
+    }
+    single {
+        ProductRepository(get(), get())
+    }
+    single {
+        ProductsViewModel(get())
+    }
 }

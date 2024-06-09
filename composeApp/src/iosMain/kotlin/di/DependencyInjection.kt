@@ -6,7 +6,7 @@ import org.koin.dsl.module
 val iosModule = module {
 //    single { LifecycleRegistry() }
 //    single<ComponentContext> { DefaultComponentContext(lifecycle = get<LifecycleRegistry>()) }
-//    single { DriverFactory() }
+    single { DriverFactory() }
 }
 
 

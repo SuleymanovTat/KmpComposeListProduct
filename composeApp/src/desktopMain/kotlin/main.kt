@@ -6,6 +6,8 @@ import presentation.App
 val koin = startKoinJvm().koin
 
 fun main() = application {
+//    MyClinet.toString()
+//    koin.toString()
     Window(
         onCloseRequest = ::exitApplication,
         title = "KotlinProjectCompose",

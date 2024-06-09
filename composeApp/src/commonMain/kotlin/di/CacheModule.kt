@@ -9,16 +9,16 @@ import kotlin.coroutines.CoroutineContext
 
 fun cacheModule() = module {
 
-//    single<CoroutineContext> {
-//        Dispatchers.Default
-//    }
-//    single {
-//        CoroutineScope(get())
-//    }
-//    single {
-//        DbHelper(get())
-//    }
-//    single {
-//        Database(get(), get())
-//    }
+    single<CoroutineContext> {
+        Dispatchers.Default
+    }
+    single {
+        CoroutineScope(get())
+    }
+    single {
+        DbHelper(get())
+    }
+    single {
+        Database(get(), get())
+    }
 }
